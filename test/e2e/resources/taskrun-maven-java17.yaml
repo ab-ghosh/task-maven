@@ -1,0 +1,19 @@
+---
+apiVersion: tekton.dev/v1
+kind: TaskRun
+metadata:
+  generateName: maven-java17-
+  labels:
+    test: java-version
+spec:
+  taskRef:
+    name: maven
+  params:
+    - name: JAVA_VERSION
+      value: "17"
+    - name: GOALS
+      value:
+        - "--version"
+  workspaces:
+    - name: source
+      emptyDir: {}
