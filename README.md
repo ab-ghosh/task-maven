@@ -18,5 +18,6 @@ The `server_secret` is optional. It should contain two *files* : `username` and 
 |:-------------------|:---------|:-----------|:-----------------------------------------------------------------------------------|
 | `GOALS`            | `string` | `package`  | The `maven` goal(s) to run                                                         |
 | `MAVEN_MIRROR_URL` | `string` | "" (empty) | The maven repository mirror URL to use                                             |
+| `JAVA_VERSION`     | `string` | `11`       | Java version to use for the Maven build (e.g. `8`, `11`, `17`, `21`)               |
 | `SUBDIRECTORY`     | `string` | `.`        | The subdirectory of the `source` workspace on which we want to execute maven goals |
 

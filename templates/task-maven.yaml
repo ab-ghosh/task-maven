@@ -39,6 +39,12 @@ spec:
       description: The Maven repository mirror url
       type: string
       default: ""
+    - name: JAVA_VERSION
+      description: >-
+        Java version to use for the Maven build.
+        Supported values: 8, 11, 17, 21.
+      type: string
+      default: "11"
     - name: SUBDIRECTORY
       type: string
       description: >-
@@ -85,7 +91,7 @@ spec:
       env:
         - name: HOME
           value: /tekton/home
-      image: {{ .Values.images.maven }}
+      image: {{ .Values.images.maven }}$(params.JAVA_VERSION):latest
       workingDir: $(workspaces.source.path)/$(params.SUBDIRECTORY)
       command: ["/usr/bin/mvn"]
       args:

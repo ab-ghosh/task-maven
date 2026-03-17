@@ -53,8 +53,6 @@ spec:
       taskRef:
         name: maven
       params:
-        - name: SERVER_SECRET
-          value: "$(params.SERVER_SECRET)"
         - name: GOALS
           value:
             - "validate"
@@ -65,3 +63,9 @@ spec:
       workspaces:
         - name: source
           workspace: source
+        - name: server_secret
+          workspace: server_secret
+        - name: proxy_secret
+          workspace: proxy_secret
+        - name: proxy_configmap
+          workspace: proxy_configmap
